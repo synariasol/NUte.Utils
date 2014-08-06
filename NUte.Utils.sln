@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{88969183-0899-41F9-B838-8879907C7FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUte.Utils", "NUte.Utils\NUte.Utils.csproj", "{7CE502B7-C50F-458F-A014-917CB3D434A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUte.Utils.Tests", "NUte.Utils.Tests\NUte.Utils.Tests.csproj", "{4AD4DD94-B782-4E37-BE47-4E1394B44FA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CE502B7-C50F-458F-A014-917CB3D434A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CE502B7-C50F-458F-A014-917CB3D434A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CE502B7-C50F-458F-A014-917CB3D434A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CE502B7-C50F-458F-A014-917CB3D434A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AD4DD94-B782-4E37-BE47-4E1394B44FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AD4DD94-B782-4E37-BE47-4E1394B44FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AD4DD94-B782-4E37-BE47-4E1394B44FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AD4DD94-B782-4E37-BE47-4E1394B44FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

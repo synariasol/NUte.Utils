@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>NUte.Utils</id>
+        <version>2.0.0</version>
+        <title>NUte.Utils</title>
+        <authors>Synaria Solutions Limited</authors>
+        <owners>Synaria Solutions Limited</owners>
+        <projectUrl>https://github.com/synariasol/NUte.Utils</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A set of utility and helper methods for common coding tasks, including; runtime validations, type extensions, enum metadata definitions and JSON deserialization.</description>
+    </metadata>
+    <files>
+        <file src="..\NUte.Utils\bin\Release\NUte.Utils.dll" target="lib\net45\NUte.Utils.dll" />
+    </files>
+</package>
