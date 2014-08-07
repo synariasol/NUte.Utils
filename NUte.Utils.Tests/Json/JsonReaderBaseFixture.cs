@@ -72,6 +72,14 @@ namespace NUte.Utils.Tests.Json
       }
 
       [Subject(typeof(JsonReaderBase), "Read")]
+      public sealed class when_invoked_with_an_empty_property_value
+      {
+        private Establish context = () => _reader = new JsonReaderStub();
+        private Because of = () => _result = _reader.ReadJson(@"{""Name"": """"}");
+        private It should_parse_the_property = () => VerifyJsonProperty(_result, "Name", null);
+      }
+
+      [Subject(typeof(JsonReaderBase), "Read")]
       public sealed class when_invoked_with_an_object
       {
         private Establish context = () => _reader = new JsonReaderStub();
@@ -133,11 +141,13 @@ namespace NUte.Utils.Tests.Json
       private static void VerifyJsonProperty(JsonObject jsonObject, string propertyName, object value)
       {
         var resultCount = (from property in jsonObject.Properties
-                           where property.Name == propertyName && property.Value.Equals(value)
+                           where property.Name == propertyName
+                           where property.Value == value || property.Value.Equals(value)
                            select property).Count();
 
         var eventCount = (from property in _reader.Properties
-                          where property.Name == propertyName && property.Value.Equals(value)
+                          where property.Name == propertyName
+                          where property.Value == value || property.Value.Equals(value)
                           select property).Count();
 
         resultCount.ShouldEqual(1);

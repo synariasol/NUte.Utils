@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Machine.Specifications;
 using NUte.Utils.Json;
 
@@ -15,6 +16,7 @@ namespace NUte.Utils.Tests.Json
       public IEnumerable<int> Codes { get; internal set; }
       public TestObject Parent { get; set; }
       public IEnumerable<TestObject> Children { get; set; }
+      public IEnumerable<IEnumerable<string>> Mappings { get; set; }
     }
 
     private const string TestJson = @"{
@@ -36,7 +38,8 @@ namespace NUte.Utils.Tests.Json
           ""Id"": 104,
           ""Name"": ""Name4"",
           ""DeleteDate"": ""2000-01-04"",
-          ""Codes"": [4, 5, 6]
+          ""Codes"": [4, 5, 6],
+          ""Mappings"": [[""Map1"", ""Map2""]]
         }]
       }
     }";
@@ -84,6 +87,16 @@ namespace NUte.Utils.Tests.Json
       else
       {
         testObject.Children.ShouldBeNull();
+      }
+
+      if (index == 4)
+      {
+        var mappings = testObject.Mappings.SelectMany(map => map);
+        mappings.ShouldContainOnly("Map1", "Map2");
+      }
+      else
+      {
+        testObject.Mappings.ShouldBeNull();
       }
     }
   }
